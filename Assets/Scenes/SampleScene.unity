@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 94217641}
   m_Layer: 0
   m_Name: Atom
-  m_TagString: Untagged
+  m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -399,9 +399,11 @@ GameObject:
   - component: {fileID: 552726658}
   - component: {fileID: 552726661}
   - component: {fileID: 552726663}
+  - component: {fileID: 552726662}
+  - component: {fileID: 552726664}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -504,12 +506,27 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &552726662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552726657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556228f368a5e634eac0f5e8ff822fa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxVelocity: 7
+  jumpForce: 25
+  isFalling: 0
 --- !u!60 &552726663
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -545,6 +562,19 @@ PolygonCollider2D:
       - {x: -0.035, y: -0.235}
       - {x: 0.015, y: -0.255}
       - {x: 0.185, y: -0.255}
+--- !u!114 &552726664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552726657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39d51bbaba7e314428d418306919eb96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 0}
 --- !u!1 &569561350
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,9 +586,10 @@ GameObject:
   - component: {fileID: 569561352}
   - component: {fileID: 569561351}
   - component: {fileID: 569561353}
+  - component: {fileID: 569561354}
   m_Layer: 0
   m_Name: Map
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -641,6 +672,57 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -6.33, y: 0}
+  - {x: -6.136188, y: -0.16152824}
+  - {x: -5.7849965, y: -0.18281904}
+  - {x: -5.294413, y: -0.14653397}
+  - {x: -4.9870753, y: -0.047495633}
+  - {x: -4.4601974, y: 0.090908825}
+  - {x: -4.2478757, y: 0.10564274}
+  - {x: -4.233295, y: 0.6293674}
+  - {x: -3.882933, y: 0.56484956}
+  - {x: -3.267102, y: 0.5142511}
+  - {x: -3.0333934, y: 0.4871438}
+  - {x: -3.3329873, y: 0.27987838}
+  - {x: -3.3258638, y: -0.42785135}
+  - {x: -2.5878801, y: -0.36089996}
+  - {x: -1.716799, y: -0.44345656}
+  - {x: -0.5600132, y: -0.46167076}
+  - {x: 1.1183897, y: -0.45991603}
+  - {x: 1.0971496, y: 0.25700378}
+  - {x: 0.8467836, y: 0.50294375}
+  - {x: 1.3420199, y: 0.4878613}
+  - {x: 2.415449, y: 0.6531666}
+  - {x: 2.5744479, y: 0.6371553}
+  - {x: 2.5714726, y: -0.5706582}
+  - {x: 2.926252, y: -0.5696952}
+  - {x: 3.3389542, y: -0.79309404}
+  - {x: 3.7148035, y: -0.75034016}
+  - {x: 3.6301525, y: -0.39907575}
+  - {x: 4.085747, y: -0.4975879}
+  - {x: 4.696044, y: -0.46269527}
+  - {x: 5.3558164, y: -0.20174436}
+  - {x: 4.640385, y: -1.061459}
+  - {x: 3.9803405, y: -1.6317015}
+  - {x: 3.9663632, y: -1.9974983}
+  - {x: 6.382097, y: -2.0170815}
+  - {x: 6.512966, y: 0.024229309}
+--- !u!68 &569561354
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569561350}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.025}
   m_EdgeRadius: 0
   m_Points:
   - {x: -6.33, y: 0}
@@ -781,7 +863,7 @@ GameObject:
   - component: {fileID: 1479347923}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
