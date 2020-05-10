@@ -9,10 +9,11 @@ public class EnemyAnimation : MonoBehaviour
     [SerializeField]
     private PolygonCollider2D[] colliders;
     private int currentColliderIndex = 0;
+    public Animator enemyAnimation;
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemyAnimation = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,4 +28,10 @@ public class EnemyAnimation : MonoBehaviour
         currentColliderIndex = spriteNum;
         colliders[currentColliderIndex].enabled = true;
     }
+
+    public void AttackAnimation()
+    {
+        enemyAnimation.Play("AttackAnim");
+    }
+
 }

@@ -35,8 +35,39 @@ public class PlayerAnimation : MonoBehaviour
         isInAnimation = true;
     }
 
+    public void ActivateGunAnimation()
+    {
+        playerAnimator.Play("ActivateGun");
+        isInAnimation = true;
+    }
+
+    public void NoChargeAnim()
+    {
+        playerAnimator.Play("NoChargeAnim");
+        isInAnimation = true;
+    }
+
+    public void ShootAnimation()
+    {
+        playerAnimator.Play("ShootAnim");
+        isInAnimation = true;
+    }
+
+    public void HurtAnimation()
+    {
+        playerAnimator.Play("HurtAnim");
+        isInAnimation = true;
+    }
+
+    public void DieAnimation()
+    {
+        playerAnimator.Play("DieAnim");
+        isInAnimation = true;
+    }
+
     public void setIsInAnimationFalse()
     {
         isInAnimation = false;
     }
+
 }
